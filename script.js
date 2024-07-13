@@ -823,8 +823,8 @@ document.getElementById('initxy').addEventListener('click',()=>{
 function updateRotation() {
   currentRotation = slerp(currentRotation, targetRotation, 0.1);
   const matrix = quaternionToMatrix(currentRotation);
-  globe.style.transform = `matrix3d(${matrix.join(',')}) scale(${zoom})`;
-  //globe.style.scale = `${zoom}`;
+  globe.style.transform = `matrix3d(${matrix.join(',')})`;
+  globe.style.scale = `${zoom}`;
   requestAnimationFrame(updateRotation);
 }
 updateRotation();
