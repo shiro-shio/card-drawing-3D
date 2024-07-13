@@ -823,8 +823,8 @@ document.getElementById('initxy').addEventListener('click',()=>{
 function updateRotation() {
   currentRotation = slerp(currentRotation, targetRotation, 0.1);
   const matrix = quaternionToMatrix(currentRotation);
-  globe.style.transform = `matrix3d(${matrix.join(',')})`;
-  globe.style.scale = `${zoom}`;
+  globe.style.transform = `matrix3d(${matrix.join(',')}) scale(${zoom})`;
+  //globe.style.scale = `${zoom}`;
   requestAnimationFrame(updateRotation);
 }
 updateRotation();
@@ -871,11 +871,11 @@ scene.addEventListener('mouseleave', () => {
 
 scene.addEventListener('wheel', (event) => {
   if (event.altKey) {
-    distance += event.deltaY * -0.1;
-    distance = Math.min(Math.max(-radius * 4, distance), radius * 4 + 200);
-  } else {
     zoom += event.deltaY * -0.001;
     zoom = Math.max(zoom,1)
+  } else {
+    distance += event.deltaY * -0.1;
+    distance = Math.min(Math.max(-radius * 4, distance), radius * 4 + 200);
   }
 });
 
