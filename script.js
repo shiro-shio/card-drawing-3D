@@ -968,6 +968,15 @@ updateValue('Text-Rotate', 'TR');
 updateValue('Text-Size', 'TS');
 createSphere();
 
+document.getElementById("menubt").addEventListener("click", function(){
+  var menu = document.getElementById('menu');
+  if (menu.classList.contains('collapsed')) {
+      menu.classList.remove('collapsed');
+  } else {
+      menu.classList.add('collapsed');
+  }
+})
+
 
 document.getElementById("menu").addEventListener("click", function(event) {
   if (event.target.classList.contains("hr-text")) {

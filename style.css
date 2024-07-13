@@ -27,10 +27,24 @@ body {
     position: absolute;
     background-color: #353535d1;
     width: 300px;
+	transition: width 0.5s;
     height: 100vh;
 	color: #fff;
 }
+.menu.collapsed {
+    width: 0;
+}
 
+#menubt{
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background-color: #ffffff00;
+    border: 0px #ffffff00;
+    font-size: 22px;
+    color: #8aeeff;
+    cursor: pointer;
+}
 
 .select{
 	appearance: none;
@@ -59,6 +73,7 @@ body {
 
 .container6,
 .container1{
+	width: 300px;
 	height: auto;
     display: flex;
     justify-content: space-evenly;
@@ -92,6 +107,7 @@ body {
 .container4,
 .container5,
 .container7{
+	width: 300px;
 	height: auto;
 	overflow: hidden;
 }
@@ -459,6 +475,7 @@ input:not(:checked) + .slider2 .off {
 }
 
 .hr-text {
+	width: 300px;
 	line-height: 1em;
 	position: relative;
 	outline: 0;
