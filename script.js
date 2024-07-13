@@ -516,7 +516,7 @@ function createSmallCube(modename, container, transformMatrix, cardid, prize) {
       c_show.appendChild(card_backside_text)
       c_show.style.display = 'flex'
       //animateInit(c_show,100,'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, -0, 0, 11, 0, -40, -80, 500, 1)',x=1,y=3,z=1);/*動態*/
-      animateInit(c_show,100,parseMatrix3d('matrix3d(1, 0, 0, 0, 0, 1, 0, 0, -0, 0, 11, 0, 0, -240, 500, 1)'),parseMatrix3d('matrix3d(1, 0, 0, 0, 0, 1, 0, 0, -0, 0, 11, 0, 0, -40, 500, 1)'));/*動態*/
+      animateInit(c_show,100,parseMatrix3d('matrix3d(1, 0, 0, 0, 0, 1, 0, 0, -0, 0, 11, 0, -20, -240, 500, 1)'),parseMatrix3d('matrix3d(1, 0, 0, 0, 0, 1, 0, 0, -0, 0, 11, 0, -20, -40, 500, 1)'));/*動態*/
       c_show_bt.addEventListener('click', function () {
         if (c_show.contains(card_backside_text)) {
           c_show.removeChild(card_backside_text);
