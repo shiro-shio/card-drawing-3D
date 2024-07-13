@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cube</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <div class="scene" id="scene">
+    <div class="room" id="room">
+      <div class="cube" id="cube"></div>
+    </div>
+    <div class="card-show" id="cshow">
+      <button id="card-close">×</button>
+    </div>
+  </div>
+  <div class="menu" id="menu">
+    <hr class="hr-text" data-content="表格輸入">
+    <div class="container7" id="cont7">
+      <button id="input-excel">輸入資料</button>
+      <div id="excle-table">
+        <textarea id="excel" placeholder="將EXCEL內容複製貼上到這"></textarea>
+        <button id="excel-ok">確定</button>
+        <button id="excel-cancel">取消</button>
+      </div>
+    </div>
+    <hr class="hr-text" data-content="卡片設定">
+    <div class="container2" id="cont2">
+      <div class="sliders">
+        <span class="slider_lable">數量:</span>
+        <input class="slider" id="items_row" type="range" min="1" max="50" step="1" value="25">
+        <span class="value" id="row">0</span>
+      </div>
+      <div class="sliders">
+        <span class="slider_lable">層數:</span>
+        <input class="slider" id="items_col" type="range" min="1" max="50" step="1" value="1">
+        <span class="value" id="col">0</span>
+      </div>
+      <div class="sliders">
+        <span class="slider_lable">大小:</span>
+        <input class="slider" id="items_size" type="range" min="1" max="5" step="1" value="1">
+        <span class="value" id="size">0</span>
+      </div>
+      <div class="sliders">
+        <span class="slider_lable">卡寬:</span>
+        <input class="slider" id="items_width" type="range" min="1" max="100" step="1" value="45">
+        <span class="value" id="width">0</span>
+      </div>
+      <div class="sliders">
+        <span class="slider_lable">卡高:</span>
+        <input class="slider" id="items_height" type="range" min="1" max="100" step="1" value="80">
+        <span class="value" id="height">0</span>
+      </div>
+      <div id="card-image">
+        <label>卡背圖片:
+          <input type="text" id="card-back-img" value="img/back.png">
+        </label>
+        <label>卡面圖片:
+          <input type="text" id="card-surface-img" value="img/prospect.png">
+        </label>
+      </div>
+    </div>
+    <hr class="hr-text" data-content="建立模式">
+    <div class="container1" id="cont1">
+      <!--select class="select" id="mode">
+        <option value="5">球體</option>
+        <option value="6" selected="selected" >環狀</option>
+        <option value="7">平面</option>
+      </select-->
+      <button id="m1">球體</button>
+      <button id="m2">圓環</button>
+      <button id="m3">平面</button>
+    </div>
+    <hr class="hr-text" data-content="旋轉控制">
+    <div class="container3" id="cont3">
+      <label class="switch">X 軸:
+        <input type="checkbox" id="x-axis" checked="checked">
+        <span class="slider2">
+          <span class="slider-label on">YES</span>
+          <span class="slider-label off">NO</span>
+        </span>
+      </label>
+      <label class="switch">Y 軸:
+        <input type="checkbox" id="y-axis" checked="checked">
+        <span class="slider2">
+          <span class="slider-label on">YES</span>
+          <span class="slider-label off">NO</span>
+        </span>
+      </label>
+      <button id="initxy">⟲</button>
+    </div>
+    <hr class="hr-text" data-content="自動旋轉">
+    <div class="container4" id="cont4">
+      <div class="sliders">
+        <span class="slider_lable">X 軸:</span>
+        <input class="slider" id="X-Rotate" type="range" min="-50" max="50" step="1" value="0">
+        <span class="value" id="XR">0</span>
+      </div>
+      <div class="sliders">
+        <span class="slider_lable">Y 軸:</span>
+        <input class="slider" id="Y-Rotate" type="range" min="-50" max="50" step="1" value="0">
+        <span class="value" id="YR">0</span>
+      </div>
+      <div class="sliders">
+        <span class="slider_lable">Z 軸:</span>
+        <input class="slider" id="Z-Rotate" type="range" min="-50" max="50" step="1" value="0">
+        <span class="value" id="ZR">0</span>
+      </div>
+    </div>
+    <hr class="hr-text" data-content="字體方向">
+    <div class="container5" id="cont5">
+      <label class="switch">直書:
+        <input type="checkbox" id="vertical" checked="checked">
+        <span class="slider2">
+          <span class="slider-label on">YES</span>
+          <span class="slider-label off">NO</span>
+        </span>
+      </label>
+      <div class="sliders">
+        <span class="slider_lable">大小:</span>
+        <input class="slider" id="Text-Size" type="range" min="6" max="20" step="1" value="16">
+        <span class="value" id="TS">0</span>
+      </div>
+      <div class="sliders">
+        <span class="slider_lable">旋轉:</span>
+        <input class="slider" id="Text-Rotate" type="range" min="0" max="360" step="10" value="0">
+        <span class="value" id="TR">0</span>
+      </div>
+    </div>
+    <hr class="hr-text" data-content="改變形狀">
+    <div class="container6" id="cont6">
+      <button id="Convertm1">球體</button>
+      <button id="Convertm2">圓環</button>
+      <button id="Convertm3">平面</button>
+    </div>
+  </div>
+  <script src="script.js" type="text/javascript"></script>
+</body>
+
+</html>
